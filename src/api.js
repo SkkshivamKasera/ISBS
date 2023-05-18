@@ -31,7 +31,7 @@ const fetUser = (req, res, next) => {
 
 
 const app = express();
-const PORT = 5000;
+const PORT =  process.env.PORT || 5000;
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 app.use(cors())
