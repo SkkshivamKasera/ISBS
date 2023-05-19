@@ -6,7 +6,6 @@ const { body, validationResult } = require('express-validator')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const cors = require('cors')
-const serverlessHTTP = require('serverless-http')
 
 let success = true
 
@@ -16,7 +15,9 @@ const bodyparser = require('body-parser');
 
 const url = "mongodb://localhost:27017/database"
 
-mongoose.connect(url)
+const connection = async () => { await mongoose.connect(url) }
+
+connection().then("Connected")
 
 const fetUser = (req, res, next) => {
     const token = req.header('token')
@@ -101,7 +102,7 @@ app.post('/login', [
         const token = jwt.sign(data, JWT_SEC)
         res.json({success: (success), Authentication_Token: token})
     } catch (error) {
-        return res.json({success: success, error: error.message})
+        return res.json({success: (!success), error: error.message})
     }
 })
 
