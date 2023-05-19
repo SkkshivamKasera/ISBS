@@ -101,8 +101,7 @@ app.post('/login', [
         const token = jwt.sign(data, JWT_SEC)
         res.json({success: (success), Authentication_Token: token})
     } catch (error) {
-        console.error(error.message)
-        return res.json({success: (!success), error:"Internal Server Error"})
+        return res.json({success: success, error: error.message})
     }
 })
 
