@@ -1,16 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
+    "build": "^0.1.4",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
@@ -20,8 +20,7 @@
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "netlify": "^13.1.7",
-    "netlify-cli": "^15.1.1",
-    "nodemon": "^2.0.22"
-  }
+       "nodemon": "^2.0.22"
+  },
+  "description": ""
 }
