@@ -13,11 +13,10 @@ JWT_SEC = "kasera"
 
 const bodyparser = require('body-parser');
 
-const url = "mongodb://localhost:27017/database"
+const url = "mongodb+srv://database:Shivam@cluster0.9ardu0g.mongodb.net/"
 
-const connection = async () => { await mongoose.connect(url) }
+mongoose.connect(url)
 
-connection().then("Connected")
 
 const fetUser = (req, res, next) => {
     const token = req.header('token')
